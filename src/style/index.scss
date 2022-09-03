@@ -1,0 +1,459 @@
+@import "./settings.scss";
+html {
+  background: #f6f4e8;
+}
+.container {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+header {
+  margin-top: 15px;
+  margin-right: 10px;
+  width: 65%;
+  padding-bottom: 30px;
+
+  //   background-size: auto 70px;
+
+  .logo-container {
+    padding-right: 15px;
+    position: relative;
+    height: 70px;
+    background-image: url("../assets/grass.jpg");
+    background-position: bottom;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    .carotte {
+      position: absolute;
+      left: 1%;
+      bottom: 5px;
+      height: 40px;
+    }
+    .carotte2 {
+      transform: rotate(-30deg);
+    }
+    .carotte3 {
+      transform: rotate(-15deg);
+    }
+    .logo {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+    }
+    .logo1 {
+      left: 8%;
+      bottom: 0px;
+    }
+    .logo2 {
+      left: 18%;
+      bottom: 10px;
+    }
+    .logo3 {
+      left: 28%;
+      bottom: 30px;
+    }
+    .logo4 {
+      right: 30%;
+      bottom: 45px;
+    }
+    .logo5 {
+      right: 20%;
+      bottom: 0px;
+    }
+    .logo6 {
+      right: 8%;
+      bottom: 0px;
+    }
+  }
+  main {
+    padding-top: 30px;
+    text-align: center;
+    font-family: "font-2";
+    h2 {
+      font-size: 3.2rem;
+    }
+    ul {
+      padding: 10px 30px;
+    }
+    li {
+      font-size: 1.2rem;
+      list-style: circle;
+    }
+    .preferences {
+      padding-top: 30px;
+      padding-right: 30px;
+      display: flex;
+      justify-content: space-between;
+      div {
+        height: 100%;
+        padding-bottom: 30px;
+      }
+      .aime {
+        padding: 10px;
+        border-radius: 20px;
+        border: 1px solid black;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-around;
+      }
+      .deteste {
+        padding: 10px;
+        border-radius: 20px;
+        margin-left: 20px;
+        border: 1px solid black;
+
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-around;
+      }
+      .logoBouftout {
+        z-index: 1000;
+        cursor: pointer;
+        border-radius: 15px;
+        margin-left: -10px;
+        height: 100px;
+        width: 80px;
+        transition-duration: 400ms;
+        &:hover {
+          transform: scale(2);
+        }
+      }
+      .aime {
+        width: 45%;
+        h2 {
+          border-bottom: 4px solid $color-3;
+          animation-duration: 600ms;
+          animation-name: h2Appear;
+        }
+      }
+      .deteste {
+        width: 45%;
+        h2 {
+          border-bottom: 4px solid rgb(184, 18, 18);
+        }
+      }
+      .logo-aliments-preferes {
+        margin: auto;
+        padding-top: 20px;
+        width: 80%;
+        display: flex;
+        justify-content: space-around;
+        .aliment {
+          width: 30px;
+          height: 30px;
+          border-radius: 100%;
+
+          cursor: pointer;
+          position: relative;
+          &:hover {
+            .hover-alim {
+              visibility: visible;
+            }
+          }
+          .hover-alim {
+            visibility: hidden;
+            width: 150px;
+          }
+          .emoji {
+            font-size: 2.2rem;
+            text-align: center;
+            height: 50px;
+            width: 35px;
+          }
+          img {
+            width: 30px;
+            height: 30px;
+            // object-fit: cover;
+          }
+        }
+      }
+    }
+    .generateRepas {
+      cursor: pointer;
+      margin: 30px;
+      width: 250px;
+      padding: 4px 8px;
+      border-radius: 25px;
+      font-size: 1.8rem;
+    }
+    .btn-three {
+      cursor: pointer;
+      padding: 12px 12px;
+      border-radius: 25px;
+      margin-top: 50px;
+      font-size: 2rem;
+      transition: all 0.5s;
+      position: relative;
+      &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        background-color: rgba(156, 151, 151, 0.1);
+        transition: all 0.3s;
+      }
+      &:hover:before {
+        opacity: 0;
+        transform: scale(1.5, 1.5);
+      }
+      &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        opacity: 0;
+        transition: all 0.3s;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        transform: scale(1.2, 1.2);
+      }
+      &:hover:after {
+        opacity: 1;
+        transform: scale(1, 1);
+      }
+    }
+    .search-container {
+      padding-top: 30px;
+
+      .saisie-aliment {
+        text-align: center;
+        border-radius: 3%;
+        margin-top: 30px;
+        width: auto;
+        font-size: 1.75rem;
+        height: auto;
+      }
+      .loop {
+        padding-left: 10px;
+        cursor: pointer;
+        font-size: 1.75rem;
+      }
+    }
+    .tableau-container {
+      margin-top: 50px;
+    }
+    .card {
+      background-color: #31523d;
+      padding: 5px;
+      height: 150px;
+      width: 10%;
+      border-radius: 30px;
+      color: white;
+      .aliment-name {
+        display: block;
+        width: 100%;
+        font-weight: bold;
+      }
+      img {
+        height: 65%;
+      }
+    }
+  }
+}
+
+.card-milk {
+  margin: 15px;
+  font-family: "font-2", serif;
+  background: linear-gradient($color-4, $color-1);
+  color: white;
+  padding-bottom: 20px;
+  width: 30%;
+  height: 100%;
+  border: 1px solid rgba(37, 34, 0, 0.815);
+  border-radius: 12px;
+  position: relative;
+  text-align: center;
+  img {
+    object-fit: cover;
+    width: 100%;
+  }
+
+  .header-card {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    height: 10%;
+    h1 {
+      background: linear-gradient(
+            -45deg,
+            #31523d,
+            25%,
+            #1d3124,
+            50%,
+            #31523d,
+            75%,
+            #1d3124
+          )
+          padding-box,
+        linear-gradient(rgb(221, 220, 220), rgb(27, 26, 26)) border-box;
+      text-align: left;
+      width: 65%;
+      border-top-right-radius: 50px;
+      border-bottom-right-radius: 150px;
+      border-right: 6px solid transparent;
+      padding-left: 100px;
+      height: 100%;
+      border-top-left-radius: 52px;
+      padding-top: 5px;
+    }
+
+    .rarete {
+      position: absolute;
+      left: -8px;
+      top: 8px;
+      background: linear-gradient(rgb(221, 220, 220), rgb(46, 46, 46));
+      color: black;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      border: 1px solid black;
+      padding: 2px;
+      font-style: italic;
+      box-shadow: 2px;
+    }
+    .pv-content {
+      margin-right: 0px;
+      width: 30%;
+      text-align: right;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      .pv-value {
+        padding-right: 10px;
+        font-size: 2.5rem;
+      }
+      .pv-text {
+        padding: 8px 5px;
+        align-self: flex-end;
+        font-size: 0.8rem;
+      }
+      img {
+        height: 25px;
+        width: 25px;
+        filter: drop-shadow(0px 0px 2px #f6f4e8);
+      }
+    }
+  }
+  .evolution {
+    position: absolute;
+    top: 35px;
+    width: 70px;
+    height: 70px;
+    border-radius: 30% 10%;
+    background: linear-gradient(-25deg, rgb(221, 221, 221), rgb(126, 126, 126))
+        padding-box,
+      linear-gradient(rgb(221, 220, 220), rgb(27, 26, 26)) border-box;
+    border: 3px solid transparent;
+    img {
+      padding: 5px;
+      object-fit: cover;
+    }
+  }
+  .spanEvolution {
+    text-align: left;
+    position: absolute;
+    color: black;
+    font-weight: bold;
+    width: 40%;
+    background: linear-gradient(90deg, rgb(104, 104, 104), rgb(160, 160, 160));
+    padding: 1px 5px;
+    left: 70px;
+    border-radius: 0% 0px 40px 0%;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+  }
+  .pokemon_img {
+    width: 90%;
+    background: linear-gradient(
+        50deg,
+        rgb(221, 220, 220),
+        30%,
+        rgb(27, 26, 26),
+        60%,
+        rgb(221, 220, 220)
+      )
+      border-box;
+
+    border: 5px solid transparent;
+    border-bottom: 5px solid rgb(187, 187, 187);
+    border-left: 5px solid rgb(187, 187, 187);
+  }
+  .img_infos {
+    width: 95%;
+    margin: auto;
+    color: black;
+    border-radius: 15px;
+    margin-top: -5px;
+    background: rgb(243, 243, 243);
+  }
+  .attaque {
+    // font-family: "font-1";
+    color: black;
+    .header-attaque {
+      padding-top: 30px;
+      display: flex;
+      align-items: center;
+      margin: 0px 30px;
+
+      .name-attaque {
+        width: 80%;
+        font-size: 2rem;
+      }
+      .element-img {
+        height: 30px;
+        width: 30px;
+        font-weight: bold;
+      }
+      .value-attaque {
+        font-size: 2rem;
+      }
+    }
+    .content-attaque {
+      line-height: 20px;
+      text-align: left;
+      p {
+        margin: auto;
+        padding: 10px 45px;
+        font-weight: semi-bold;
+      }
+    }
+  }
+  .infos-card {
+    padding-top: 30px;
+    display: flex;
+    color: black;
+    flex-wrap: wrap;
+    h3 {
+      margin-bottom: 10px;
+      width: 50%;
+    }
+    ul {
+      width: 50%;
+      li {
+        list-style: inside;
+      }
+    }
+    span {
+      display: block;
+      width: 50%;
+    }
+  }
+}
+
+@keyframes h2Appear {
+  from {
+    margin-top: -100%;
+    width: 300%;
+  }
+
+  to {
+    margin-top: 0%;
+    width: 100%;
+  }
+}
