@@ -1,4 +1,5 @@
 @import "./settings.scss";
+@import "./components/aliment.scss";
 html {
   background: #f6f4e8;
 }
@@ -7,7 +8,7 @@ html {
   display: flex;
   justify-content: space-between;
 }
-header {
+section {
   margin-top: 15px;
   margin-right: 10px;
   width: 65%;
@@ -112,7 +113,10 @@ header {
         z-index: 1000;
         cursor: pointer;
         border-radius: 15px;
-        margin-left: -10px;
+
+        right: 8px;
+        top: 8px;
+        position: absolute;
         height: 100px;
         width: 80px;
         transition-duration: 400ms;
@@ -121,15 +125,19 @@ header {
         }
       }
       .aime {
-        width: 45%;
+        width: 49%;
+        position: relative;
         h2 {
-          border-bottom: 4px solid $color-3;
           animation-duration: 600ms;
-          animation-name: h2Appear;
+          animation-name: h2AlimentAppear;
+
+          border-bottom: 4px solid $color-3;
         }
       }
       .deteste {
-        width: 45%;
+        width: 49%;
+        position: relative;
+
         h2 {
           border-bottom: 4px solid rgb(184, 18, 18);
         }
@@ -237,12 +245,16 @@ header {
       }
     }
     .tableau-container {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
       margin-top: 50px;
     }
     .card {
       background-color: #31523d;
       padding: 5px;
       height: 150px;
+      margin: 15px;
       width: 10%;
       border-radius: 30px;
       color: white;
@@ -253,6 +265,7 @@ header {
       }
       img {
         height: 65%;
+        max-width: 98%;
       }
     }
   }
@@ -446,14 +459,25 @@ header {
   }
 }
 
-@keyframes h2Appear {
+@keyframes h2AlimentAppear {
   from {
-    margin-top: -100%;
+    opacity: 0;
     width: 300%;
   }
 
   to {
-    margin-top: 0%;
+    opacity: 1;
+    width: 100%;
+  }
+}
+@keyframes imageAlimentAppear {
+  from {
+    opacity: 0;
+    width: 300%;
+  }
+
+  to {
+    opacity: 1;
     width: 100%;
   }
 }

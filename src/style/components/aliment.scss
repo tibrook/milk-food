@@ -1,0 +1,49 @@
+.hover {
+  cursor: pointer;
+  &:hover {
+    img,
+    .aliment-name {
+      filter: opacity(15%) contrast(15%);
+    }
+    span {
+      transform: translateY(0);
+      visibility: visible;
+    }
+  }
+}
+
+.card {
+  background-color: #31523d;
+  padding: 5px;
+  height: 150px;
+  margin: 15px;
+  width: 10%;
+  border-radius: 30px;
+  color: white;
+  position: relative;
+  overflow: hidden;
+
+  .aliment-name {
+    display: block;
+    width: 100%;
+    font-weight: bold;
+  }
+  img {
+    height: 65%;
+    max-width: 98%;
+  }
+  .infos {
+    bottom: 0px;
+    font-size: 1.5rem;
+    left: 0;
+    line-height: 34px;
+    margin: 0 auto;
+    padding: 1rem;
+    position: absolute;
+    -webkit-transform: translateY(200px);
+    transform: translateY(200px);
+    transition: 0.5s ease;
+    visibility: hidden;
+    width: 100%;
+  }
+}
