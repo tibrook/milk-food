@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Aliment from "./Aliment";
 import { aliments } from "../data/aliments.js";
 const TableauAliment = () => {

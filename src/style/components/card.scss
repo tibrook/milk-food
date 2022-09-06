@@ -1,0 +1,220 @@
+.card-milk {
+  margin: 15px;
+  font-family: "font-2", serif;
+  background: linear-gradient($color-4, $color-1);
+  color: white;
+  padding-bottom: 20px;
+  width: 30%;
+  height: 100%;
+  border: 1px solid rgba(37, 34, 0, 0.815);
+  border-radius: 12px;
+  position: relative;
+  text-align: center;
+  img {
+    object-fit: cover;
+    width: 100%;
+  }
+
+  .header-card {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    height: 10%;
+    h1 {
+      background: linear-gradient(
+            -45deg,
+            #31523d,
+            25%,
+            #1d3124,
+            50%,
+            #31523d,
+            75%,
+            #1d3124
+          )
+          padding-box,
+        linear-gradient(rgb(221, 220, 220), rgb(27, 26, 26)) border-box;
+      text-align: left;
+      width: 65%;
+      border-top-right-radius: 50px;
+      border-bottom-right-radius: 150px;
+      border-right: 6px solid transparent;
+      padding-left: 100px;
+      height: 100%;
+      border-top-left-radius: 52px;
+      padding-top: 5px;
+    }
+
+    .rarete {
+      position: absolute;
+      left: -8px;
+      top: 8px;
+      background: linear-gradient(rgb(221, 220, 220), rgb(46, 46, 46));
+      color: black;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      border: 1px solid black;
+      padding: 2px;
+      font-style: italic;
+      box-shadow: 2px;
+    }
+    .pv-content {
+      margin-right: 0px;
+      width: 30%;
+      text-align: right;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      .pv-value {
+        padding-right: 10px;
+        font-size: 2.5rem;
+      }
+      .pv-text {
+        padding: 8px 5px;
+        align-self: flex-end;
+        font-size: 0.8rem;
+      }
+      img {
+        height: 25px;
+        width: 25px;
+        filter: drop-shadow(0px 0px 2px #f6f4e8);
+      }
+    }
+  }
+  .evolution {
+    position: absolute;
+    top: 35px;
+    width: 70px;
+    height: 70px;
+    border-radius: 30% 10%;
+    background: linear-gradient(-25deg, rgb(221, 221, 221), rgb(126, 126, 126))
+        padding-box,
+      linear-gradient(rgb(221, 220, 220), rgb(27, 26, 26)) border-box;
+    border: 3px solid transparent;
+    img {
+      padding: 5px;
+      object-fit: cover;
+    }
+  }
+  .spanEvolution {
+    text-align: left;
+    position: absolute;
+    color: black;
+    font-weight: bold;
+    width: 40%;
+    background: linear-gradient(90deg, rgb(104, 104, 104), rgb(160, 160, 160));
+    padding: 1px 5px;
+    left: 70px;
+    border-radius: 0% 0px 40px 0%;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+  }
+  .pokemon_img {
+    width: 90%;
+    background: linear-gradient(
+        50deg,
+        rgb(221, 220, 220),
+        30%,
+        rgb(27, 26, 26),
+        60%,
+        rgb(221, 220, 220)
+      )
+      border-box;
+
+    border: 5px solid transparent;
+    border-bottom: 5px solid rgb(187, 187, 187);
+    border-left: 5px solid rgb(187, 187, 187);
+  }
+  .img_infos {
+    width: 95%;
+    margin: auto;
+    color: black;
+    border-radius: 15px;
+    margin-top: -5px;
+    background: rgb(243, 243, 243);
+  }
+  .attaque {
+    // font-family: "font-1";
+    color: black;
+    .header-attaque {
+      padding-top: 30px;
+      display: flex;
+      align-items: center;
+      margin: 0px 30px;
+
+      .name-attaque {
+        width: 80%;
+        font-size: 2rem;
+      }
+      .element-img {
+        height: 30px;
+        width: 30px;
+        font-weight: bold;
+      }
+      .value-attaque {
+        font-size: 2rem;
+      }
+    }
+    .content-attaque {
+      line-height: 20px;
+      text-align: left;
+      p {
+        margin: auto;
+        padding: 10px 45px;
+        font-weight: semi-bold;
+      }
+    }
+  }
+  .infos-card {
+    padding-top: 30px;
+    display: flex;
+    color: black;
+    flex-wrap: wrap;
+    h3 {
+      margin-bottom: 10px;
+      width: 50%;
+    }
+    ul {
+      width: 50%;
+      li {
+        list-style: inside;
+      }
+    }
+    span {
+      display: block;
+      width: 50%;
+    }
+  }
+}
+@media screen and (max-width: 1092px) {
+  .container {
+    flex-direction: column;
+  }
+  .card-milk {
+    width: 95%;
+    margin: 11px;
+    .spanEvolution {
+      font-size: 0.85rem;
+    }
+    .header-card {
+      .rarete {
+        font-size: 0.8rem;
+      }
+      h1 {
+        font-size: 1.5rem;
+      }
+      .pv-content {
+        .pv-text {
+          font-size: 0.5rem;
+        }
+        .pv-value {
+          font-size: 1.2rem;
+        }
+      }
+    }
+    .attaque {
+      .header-attaque {
+        padding-top: 15px;
+      }
+    }
+  }
+}

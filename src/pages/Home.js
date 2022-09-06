@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import Card from "../components/Card";
 import TableauAliment from "../components/TableauAliment";
+
 const Home = () => {
   return (
     <div className="container">
@@ -30,13 +31,18 @@ const Home = () => {
           <img src="./assets/1.png" alt="le milk" className="logo logo6" />
         </div>
         <main>
-          <div className="besoins">
-            <h2>Les besoins</h2>
-            <ul>
-              <li>Foin à volonté</li>
-              <li>Eau fraîche à volonté</li>
-              <li>Granules 1 fois / jour</li>
-            </ul>
+          <div className="besoins-container">
+            <div className="besoins">
+              <h2>Les besoins</h2>
+              <ul>
+                <li>Foin à volonté</li>
+                <li>Eau fraîche à volonté</li>
+                <li>Granules 1 fois / jour</li>
+              </ul>
+            </div>
+            <div className="button-container">
+              <button className="generer-repas">Générer un repas</button>
+            </div>
           </div>
 
           <div className="preferences">
@@ -49,27 +55,22 @@ const Home = () => {
               ></img>
               <div className="logo-aliments-preferes">
                 <div className="aliment">
-                  {/* <img src="./assets/carotte.png" alt="carotte" /> */}
                   <span className="emoji">🥕</span>
                   <span className="hover-alim">Feuilles de carottes</span>
                 </div>
                 <div className="aliment">
-                  {/* <img src="./assets/carotte.png" alt="carotte" /> */}
                   <span className="emoji">☘️</span>
                   <span className="hover-alim">Trèfle</span>
                 </div>
                 <div className="aliment">
-                  {/* <img src="./assets/carotte.png" alt="carotte" /> */}
                   <span className="emoji">💐</span>
                   <span className="hover-alim">Pisselit</span>
                 </div>
                 <div className="aliment">
-                  {/* <img src="./assets/carotte.png" alt="carotte" /> */}
                   <span className="emoji">🥬</span>
                   <span className="hover-alim">Laitue</span>
                 </div>
                 <div className="aliment">
-                  {/* <img src="./assets/carotte.png" alt="carotte" /> */}
                   <img
                     src="./assets/endives.png"
                     className="emoji"
@@ -89,46 +90,42 @@ const Home = () => {
               ></img>
               <div className="logo-aliments-preferes">
                 <div className="aliment">
-                  {/* <img src="./assets/carotte.png" alt="carotte" /> */}
                   <span className="emoji">🥕</span>
                   <span className="hover-alim">Carottes</span>
                 </div>
                 <div className="aliment">
-                  {/* <img src="./assets/carotte.png" alt="carotte" /> */}
                   <span className="emoji">🌱</span>
                   <span className="hover-alim">
                     Graines (avoine, blé, céréales, etc.)
                   </span>
                 </div>
                 <div className="aliment">
-                  {/* <img src="./assets/carotte.png" alt="carotte" /> */}
                   <span className="emoji">🥖</span>
                   <span className="hover-alim">Pain</span>
                 </div>
                 <div className="aliment">
-                  {/* <img src="./assets/carotte.png" alt="carotte" /> */}
                   <span className="emoji">🌽</span>
                   <span className="hover-alim">Mais</span>
                 </div>
                 <div className="aliment">
-                  {/* <img src="./assets/carotte.png" alt="carotte" /> */}
                   <span className="emoji">🍫</span>
                   <span className="hover-alim">Chocolat</span>
                 </div>
               </div>{" "}
             </div>
           </div>
-          <button className="btn-three">Générer un repas</button>
-          <div className="search-container">
-            <h2>Un doute sur un aliment ? </h2>
+          <div className="background-change">
+            <div className="search-container">
+              <h2>Un doute sur un aliment ? </h2>
 
-            <input
-              type="text"
-              className="saisie-aliment"
-              placeholder="banane"
-            ></input>
-            <FontAwesomeIcon icon={faMagnifyingGlass} className="loop" />
-            <TableauAliment />
+              <input
+                type="text"
+                className="saisie-aliment"
+                placeholder="banane"
+              ></input>
+              <FontAwesomeIcon icon={faMagnifyingGlass} className="loop" />
+              <TableauAliment />
+            </div>
           </div>
         </main>
       </section>

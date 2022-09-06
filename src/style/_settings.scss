@@ -6,6 +6,10 @@
   font-family: "font-2";
   src: url(../assets/fonts/ChampagneEtLimousines.ttf);
 }
+@font-face {
+  font-family: "font-3";
+  src: url(../assets/fonts/Roboto-Regular.ttf);
+}
 
 * {
   margin: 0;
@@ -32,3 +36,10 @@ $color-3-opacity: rgba(#e59560, 0);
 $color-4: #1d3124;
 $bordureGrise1: rgb(221, 220, 220);
 $bordureGrise2: rgb(46, 46, 46);
+
+$background: #f9f4ef;
+$paragraph: #716040;
+$headline: #020826;
+$button: #8c7851;
+$button-text: #fffffe;
+$card-background: #eaddcf;

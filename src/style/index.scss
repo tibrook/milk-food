@@ -1,21 +1,88 @@
 @import "./settings.scss";
 @import "./components/aliment.scss";
+@import "./components/card.scss";
 html {
-  background: #f6f4e8;
+  // background: #f6f4e8;
+  background: $background;
+}
+h2 {
+  color: #020826;
+  font-family: "font-2";
+}
+.besoins-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  .besoins {
+    width: 50%;
+    border-right: 1px dashed maroon;
+  }
+  .button-container {
+    width: 50%;
+  }
+  .generer-repas {
+    background: $button;
+    color: $button-text;
+    cursor: pointer;
+    padding: 12px 12px;
+    border-radius: 25px;
+    margin-top: 50px;
+    height: 60px;
+    font-size: 2rem;
+    transition: all 0.5s;
+    position: relative;
+    &:hover {
+      transform: scale(1.1);
+    }
+    &:before {
+      content: "";
+      position: absolute;
+      border-radius: 25px;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      background-color: rgba(156, 151, 151, 0.1);
+      transition: all 0.3s;
+    }
+    &:hover:before {
+      opacity: 0;
+      transform: scale(1.5, 1.5);
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      border-radius: 25px;
+
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      opacity: 0;
+      transition: all 0.3s;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      transform: scale(1.2, 1.2);
+    }
+    &:hover:after {
+      opacity: 1;
+      transform: scale(1, 1);
+    }
+  }
 }
 .container {
   position: relative;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 section {
+  font-family: "font-3";
   margin-top: 15px;
   margin-right: 10px;
   width: 65%;
   padding-bottom: 30px;
-
-  //   background-size: auto 70px;
-
   .logo-container {
     padding-right: 15px;
     position: relative;
@@ -24,6 +91,20 @@ section {
     background-position: bottom;
     background-color: rgba(0, 0, 0, 0.1);
     border-radius: 10px;
+
+    &:active {
+      .logo6 {
+        animation: logo6 1s;
+      }
+
+      .logo5 {
+        // webkit-animation-delay: 5s;
+        // webkit-animation-duration: 1s;
+        // webkit-animation-name: glissement;
+        animation-delay: 5;
+        animation: glissement 1s;
+      }
+    }
     .carotte {
       position: absolute;
       left: 1%;
@@ -69,25 +150,27 @@ section {
   main {
     padding-top: 30px;
     text-align: center;
-    font-family: "font-2";
     h2 {
       font-size: 3.2rem;
     }
     ul {
-      padding: 10px 30px;
+      color: $paragraph;
+      width: 30%;
+      margin: auto;
+      margin-top: 20px;
     }
     li {
       font-size: 1.2rem;
       list-style: circle;
     }
     .preferences {
-      padding-top: 30px;
-      padding-right: 30px;
+      margin-top: 50px;
       display: flex;
       justify-content: space-between;
       div {
         height: 100%;
         padding-bottom: 30px;
+        background: $card-background;
       }
       .aime {
         padding: 10px;
@@ -121,11 +204,12 @@ section {
         width: 80px;
         transition-duration: 400ms;
         &:hover {
-          transform: scale(2);
+          margin-right: 80px;
+          transform: scale(3);
         }
       }
       .aime {
-        width: 49%;
+        width: 50%;
         position: relative;
         h2 {
           animation-duration: 600ms;
@@ -135,7 +219,7 @@ section {
         }
       }
       .deteste {
-        width: 49%;
+        width: 50%;
         position: relative;
 
         h2 {
@@ -178,58 +262,18 @@ section {
         }
       }
     }
-    .generateRepas {
-      cursor: pointer;
-      margin: 30px;
-      width: 250px;
-      padding: 4px 8px;
-      border-radius: 25px;
-      font-size: 1.8rem;
-    }
-    .btn-three {
-      cursor: pointer;
-      padding: 12px 12px;
-      border-radius: 25px;
-      margin-top: 50px;
-      font-size: 2rem;
-      transition: all 0.5s;
-      position: relative;
-      &:before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 1;
-        background-color: rgba(156, 151, 151, 0.1);
-        transition: all 0.3s;
-      }
-      &:hover:before {
-        opacity: 0;
-        transform: scale(1.5, 1.5);
-      }
-      &:after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 1;
-        opacity: 0;
-        transition: all 0.3s;
-        border: 1px solid rgba(255, 255, 255, 0.5);
-        transform: scale(1.2, 1.2);
-      }
-      &:hover:after {
-        opacity: 1;
-        transform: scale(1, 1);
-      }
+
+    .background-change {
+      margin-top: 30px;
+      margin-left: -600px;
+      background: #8c7851;
     }
     .search-container {
       padding-top: 30px;
-
+      margin-left: 36%;
+      h2 {
+        color: #fffffe;
+      }
       .saisie-aliment {
         text-align: center;
         border-radius: 3%;
@@ -250,215 +294,90 @@ section {
       flex-wrap: wrap;
       margin-top: 50px;
     }
-    .card {
-      background-color: #31523d;
-      padding: 5px;
-      height: 150px;
-      margin: 15px;
-      width: 10%;
-      border-radius: 30px;
-      color: white;
-      .aliment-name {
-        display: block;
-        width: 100%;
-        font-weight: bold;
-      }
-      img {
-        height: 65%;
-        max-width: 98%;
-      }
-    }
   }
 }
-
-.card-milk {
-  margin: 15px;
-  font-family: "font-2", serif;
-  background: linear-gradient($color-4, $color-1);
-  color: white;
-  padding-bottom: 20px;
-  width: 30%;
-  height: 100%;
-  border: 1px solid rgba(37, 34, 0, 0.815);
-  border-radius: 12px;
-  position: relative;
-  text-align: center;
-  img {
-    object-fit: cover;
+@media screen and (max-width: 760px) {
+  section {
     width: 100%;
+    .logo-container {
+      border-radius: 0px;
+    }
   }
-
-  .header-card {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    height: 10%;
-    h1 {
-      background: linear-gradient(
-            -45deg,
-            #31523d,
-            25%,
-            #1d3124,
-            50%,
-            #31523d,
-            75%,
-            #1d3124
-          )
-          padding-box,
-        linear-gradient(rgb(221, 220, 220), rgb(27, 26, 26)) border-box;
-      text-align: left;
-      width: 65%;
-      border-top-right-radius: 50px;
-      border-bottom-right-radius: 150px;
-      border-right: 6px solid transparent;
-      padding-left: 100px;
-      height: 100%;
-      border-top-left-radius: 52px;
-      padding-top: 5px;
+  .besoins-container {
+    flex-direction: column;
+    .besoins {
+      width: 100%;
+      border: none;
     }
-
-    .rarete {
-      position: absolute;
-      left: -8px;
-      top: 8px;
-      background: linear-gradient(rgb(221, 220, 220), rgb(46, 46, 46));
-      color: black;
-      border-radius: 8px;
-      font-size: 1.1rem;
-      border: 1px solid black;
-      padding: 2px;
-      font-style: italic;
-      box-shadow: 2px;
+    li {
+      padding-bottom: 8px;
     }
-    .pv-content {
-      margin-right: 0px;
-      width: 30%;
-      text-align: right;
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      .pv-value {
-        padding-right: 10px;
-        font-size: 2.5rem;
-      }
-      .pv-text {
-        padding: 8px 5px;
-        align-self: flex-end;
-        font-size: 0.8rem;
-      }
-      img {
-        height: 25px;
-        width: 25px;
-        filter: drop-shadow(0px 0px 2px #f6f4e8);
+    .button-container {
+      width: 100%;
+      margin: auto;
+      .generer-repas {
+        margin-top: 30px;
+        font-size: 1.5rem;
       }
     }
   }
-  .evolution {
-    position: absolute;
-    top: 35px;
-    width: 70px;
-    height: 70px;
-    border-radius: 30% 10%;
-    background: linear-gradient(-25deg, rgb(221, 221, 221), rgb(126, 126, 126))
-        padding-box,
-      linear-gradient(rgb(221, 220, 220), rgb(27, 26, 26)) border-box;
-    border: 3px solid transparent;
-    img {
-      padding: 5px;
-      object-fit: cover;
-    }
-  }
-  .spanEvolution {
-    text-align: left;
-    position: absolute;
-    color: black;
-    font-weight: bold;
-    width: 40%;
-    background: linear-gradient(90deg, rgb(104, 104, 104), rgb(160, 160, 160));
-    padding: 1px 5px;
-    left: 70px;
-    border-radius: 0% 0px 40px 0%;
-    border-bottom: 1px solid black;
-    border-right: 1px solid black;
-  }
-  .pokemon_img {
-    width: 90%;
-    background: linear-gradient(
-        50deg,
-        rgb(221, 220, 220),
-        30%,
-        rgb(27, 26, 26),
-        60%,
-        rgb(221, 220, 220)
-      )
-      border-box;
-
-    border: 5px solid transparent;
-    border-bottom: 5px solid rgb(187, 187, 187);
-    border-left: 5px solid rgb(187, 187, 187);
-  }
-  .img_infos {
-    width: 95%;
-    margin: auto;
-    color: black;
-    border-radius: 15px;
-    margin-top: -5px;
-    background: rgb(243, 243, 243);
-  }
-  .attaque {
-    // font-family: "font-1";
-    color: black;
-    .header-attaque {
-      padding-top: 30px;
-      display: flex;
-      align-items: center;
-      margin: 0px 30px;
-
-      .name-attaque {
-        width: 80%;
-        font-size: 2rem;
+  section {
+    main {
+      .preferences {
+        flex-direction: column;
+        align-items: center;
+        h2 {
+          font-size: 2rem;
+          position: absolute;
+          left: 8px;
+          top: 8px;
+        }
+        .aime {
+          width: 98%;
+          margin-bottom: 20px;
+        }
+        .deteste {
+          width: 98%;
+          margin: 0;
+        }
+        .logo-aliments-preferes {
+          padding-top: 65px;
+          margin-left: 0px;
+          .aliment {
+            width: 30px;
+            height: 30px;
+            .emoji {
+              font-size: 1.5rem;
+              height: 30px;
+              width: 25px;
+            }
+          }
+        }
       }
-      .element-img {
-        height: 30px;
-        width: 30px;
-        font-weight: bold;
+      .background-change {
+        width: 100%;
+        margin: 0;
+        margin-top: 30px;
+        .search-container {
+          margin-left: 0;
+        }
       }
-      .value-attaque {
-        font-size: 2rem;
+      .tableau-container {
+        margin-top: 30px;
       }
-    }
-    .content-attaque {
-      line-height: 20px;
-      text-align: left;
-      p {
-        margin: auto;
-        padding: 10px 45px;
-        font-weight: semi-bold;
+      .card {
+        margin: 8px;
+        width: 25%;
+        .infos {
+          top: 8px;
+          font-size: 0.98rem;
+          line-height: normal;
+          padding: 0.4rem;
+        }
       }
-    }
-  }
-  .infos-card {
-    padding-top: 30px;
-    display: flex;
-    color: black;
-    flex-wrap: wrap;
-    h3 {
-      margin-bottom: 10px;
-      width: 50%;
-    }
-    ul {
-      width: 50%;
-      li {
-        list-style: inside;
-      }
-    }
-    span {
-      display: block;
-      width: 50%;
     }
   }
 }
-
 @keyframes h2AlimentAppear {
   from {
     opacity: 0;
@@ -481,3 +400,27 @@ section {
     width: 100%;
   }
 }
+@keyframes logo6 {
+  from {
+    margin-right: 0px;
+    opacity: 1;
+  }
+  to {
+    margin-right: 50px;
+    opacity: 0;
+  }
+}
+@keyframes glissement {
+  from {
+    margin-right: 0px;
+    margin-bottom: 0px;
+    opacity: 1;
+  }
+  to {
+    margin-bottom: 15px;
+    margin-right: 30px;
+    opacity: 0;
+  }
+}
+
+/* Media queries  */
