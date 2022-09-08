@@ -1,6 +1,7 @@
 @import "./settings.scss";
 @import "./components/aliment.scss";
 @import "./components/card.scss";
+@import "./components/formGenerate.scss";
 html {
   // background: #f6f4e8;
   background: $background;
@@ -214,8 +215,16 @@ section {
         h2 {
           animation-duration: 600ms;
           animation-name: h2AlimentAppear;
-
-          border-bottom: 4px solid $color-3;
+          &::after {
+            content: "";
+            width: 70%;
+            height: 4px;
+            background-color: $color-3;
+            margin: auto;
+            position: relative;
+            top: 4px;
+            display: block;
+          }
         }
       }
       .deteste {
@@ -223,7 +232,16 @@ section {
         position: relative;
 
         h2 {
-          border-bottom: 4px solid rgb(184, 18, 18);
+          &::after {
+            content: "";
+            width: 70%;
+            height: 4px;
+            background-color: rgb(184, 18, 18);
+            margin: auto;
+            position: relative;
+            top: 4px;
+            display: block;
+          }
         }
       }
       .logo-aliments-preferes {
@@ -265,7 +283,7 @@ section {
 
     .background-change {
       margin-top: 30px;
-      margin-left: -600px;
+      margin-left: -700px;
       background: #8c7851;
     }
     .search-container {

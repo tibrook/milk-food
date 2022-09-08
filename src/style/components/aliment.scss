@@ -17,7 +17,7 @@
   padding: 5px;
   height: 150px;
   margin: 15px;
-  width: 10%;
+  width: 14%;
   border-radius: 30px;
   color: white;
   position: relative;
@@ -34,11 +34,10 @@
   }
   .infos {
     bottom: 0px;
-    font-size: 1.5rem;
+    font-size: 1rem;
     left: 0;
-    line-height: 34px;
     margin: 0 auto;
-    padding: 1rem;
+    padding: 1rem 0.25rem;
     position: absolute;
     -webkit-transform: translateY(200px);
     transform: translateY(200px);

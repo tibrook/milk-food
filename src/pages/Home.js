@@ -1,10 +1,28 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import Card from "../components/Card";
 import TableauAliment from "../components/TableauAliment";
-
+import { useState } from "react";
+import FormGenerate from "../components/FormGenerate";
+import { aliments } from "../data/aliments";
 const Home = () => {
+  const [search, setSearch] = useState("");
+  const [generateRepas, setGenerateRepas] = useState(false);
+  const [alimentsVolonte, setAlimentsVolonte] = useState([]);
+  const formGenerate = () => {
+    setGenerateRepas(true);
+    let alimentData = [];
+
+    for (let i = 0; i < aliments.length; i++) {
+      if (aliments[i].volonte) {
+        // aliments[i].id = i++;
+        alimentData.push(aliments[i]);
+      } else {
+      }
+    }
+    setAlimentsVolonte(alimentData);
+  };
   return (
     <div className="container">
       <Card />
@@ -41,7 +59,13 @@ const Home = () => {
               </ul>
             </div>
             <div className="button-container">
-              <button className="generer-repas">Générer un repas</button>
+              {generateRepas ? (
+                <FormGenerate alimentsVolonte={alimentsVolonte} />
+              ) : (
+                <button className="generer-repas" onClick={formGenerate}>
+                  Générer un repas
+                </button>
+              )}
             </div>
           </div>
 
@@ -122,9 +146,11 @@ const Home = () => {
                 type="text"
                 className="saisie-aliment"
                 placeholder="banane"
+                id="search-input"
+                onChange={(e) => setSearch(e.target.value)}
               ></input>
               <FontAwesomeIcon icon={faMagnifyingGlass} className="loop" />
-              <TableauAliment />
+              <TableauAliment inputSearch={search} />
             </div>
           </div>
         </main>
