@@ -1,8 +1,7 @@
 import React from "react";
 import Aliment from "./Aliment";
 import { aliments } from "../data/aliments.js";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+
 import { useState, useEffect } from "react";
 
 const TableauAliment = ({ inputSearch }) => {
@@ -28,9 +27,9 @@ const TableauAliment = ({ inputSearch }) => {
   return (
     <div className="tableau-container">
       {!inputSearch
-        ? aliments.map((aliment) => (
-            <Aliment aliment={aliment} key={aliment.id} />
-          ))
+        ? aliments
+            .slice(0, 12)
+            .map((aliment) => <Aliment aliment={aliment} key={aliment.id} />)
         : searchAliments.map((aliment) => (
             <Aliment aliment={aliment} key={aliment.id} />
           ))}

@@ -2,8 +2,8 @@ export const aliments = [
   {
     id: 1,
     type: "Légume",
-    nom: "Fane de carottes",
-    infos: "en petites quantités",
+    nom: "Fâne de carotte",
+    infos: "En petites quantités seulement !",
     imageUrl: "./assets/carotte.png",
     emoji: "🥕",
     autorise: true,
@@ -39,7 +39,7 @@ export const aliments = [
   {
     id: 5,
     type: "Légume",
-    nom: "Endive",
+    nom: "Endives",
     infos: "",
     imageUrl: "./assets/endive.png",
     autorise: true,
@@ -102,7 +102,7 @@ export const aliments = [
   {
     id: 12,
     type: "Légume",
-    nom: "zucchini",
+    nom: "Zucchini",
     infos: "",
     imageUrl: "./assets/zucchini.png",
     autorise: true,
@@ -111,7 +111,7 @@ export const aliments = [
   {
     id: 13,
     type: "Légume",
-    nom: "feuilles de pissenlit",
+    nom: "Feuilles de pissenlit",
     infos: "",
     imageUrl: "./assets/pissenlit.png",
     autorise: true,
@@ -120,7 +120,7 @@ export const aliments = [
   {
     id: 14,
     type: "Légume",
-    nom: "feuilles de betterave",
+    nom: "Feuilles de betterave",
     infos: "",
     imageUrl: "./assets/batteraves.png",
     autorise: true,
@@ -129,7 +129,7 @@ export const aliments = [
   {
     id: 15,
     type: "Légume",
-    nom: " pois mange-tout",
+    nom: " Pois mange-tout",
     infos: "",
     imageUrl: "./assets/pois_mange_tout.png",
     autorise: true,
@@ -138,7 +138,7 @@ export const aliments = [
   {
     id: 16,
     type: "Légume",
-    nom: "carottes",
+    nom: "Carottes",
     infos: "",
     imageUrl: "./assets/carotte.png",
     autorise: true,
@@ -156,7 +156,7 @@ export const aliments = [
   {
     id: 18,
     type: "Légume",
-    nom: "choux de Bruxelles",
+    nom: "Choux de Bruxelles",
     infos: "",
     imageUrl: "./assets/chou-de-bruxelles.png",
     autorise: true,
@@ -165,7 +165,7 @@ export const aliments = [
   {
     id: 19,
     type: "Légume",
-    nom: " choux-fleurs",
+    nom: " Choux-fleurs",
     infos: "",
     imageUrl: "./assets/choux-fleur.png",
     autorise: true,
@@ -174,7 +174,7 @@ export const aliments = [
   {
     id: 20,
     type: "Légume",
-    nom: "épinards",
+    nom: "Epinards",
     infos: "",
     imageUrl: "./assets/epinard.png",
     autorise: true,
@@ -183,7 +183,7 @@ export const aliments = [
   {
     id: 21,
     type: "Légume",
-    nom: "épinards",
+    nom: "Coriandre",
     infos: "",
     imageUrl: "./assets/coriandre.png",
     autorise: true,

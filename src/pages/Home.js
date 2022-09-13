@@ -55,7 +55,7 @@ const Home = () => {
               <ul>
                 <li>Foin à volonté</li>
                 <li>Eau fraîche à volonté</li>
-                <li>Granules 1 fois / jour</li>
+                <li>Granules 1 fois / jour (1 poignée)</li>
               </ul>
             </div>
             <div className="button-container">
@@ -94,14 +94,6 @@ const Home = () => {
                   <span className="emoji">🥬</span>
                   <span className="hover-alim">Laitue</span>
                 </div>
-                <div className="aliment">
-                  <img
-                    src="./assets/endives.png"
-                    className="emoji"
-                    alt="endives"
-                  />
-                  <span className="hover-alim">Endives</span>
-                </div>
               </div>
             </div>
             <div className="deteste">
@@ -113,10 +105,6 @@ const Home = () => {
                 className="logoBouftout"
               ></img>
               <div className="logo-aliments-preferes">
-                <div className="aliment">
-                  <span className="emoji">🥕</span>
-                  <span className="hover-alim">Carottes</span>
-                </div>
                 <div className="aliment">
                   <span className="emoji">🌱</span>
                   <span className="hover-alim">
