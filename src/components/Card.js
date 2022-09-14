@@ -15,7 +15,7 @@ const Card = () => {
       <div className="evolution">
         <img src="./assets/milk_evolution.png" alt="Evolution de Milka" />
       </div>
-      <span className="spanEvolution">Evolution de : Milkrot</span>
+      <span className="spanEvolution">Évolution de : Milkrot</span>
       <img
         src="./assets/milkgrognon.jpg"
         alt="milka grognon"
@@ -76,7 +76,7 @@ const Card = () => {
           <p>
             Attaque dévastatrice qui en a défiguré plus d'un.
             <br /> Du Bernard L'hermite au tigre de Chine méridoniale, aucun des
-            mammifères n'a su résister à son effroyable coup frontal
+            êtres humains n'a su résister à son effroyable coup frontal
           </p>
         </div>
       </div>

@@ -7,10 +7,6 @@ section {
         font-size: 1.8rem;
         margin-bottom: 15px;
       }
-      .checkbow-wrapper {
-        width: auto;
-        height: 50px;
-      }
     }
   }
 }
@@ -19,4 +15,22 @@ section {
 }
 .recette {
   height: 300px;
+}
+.parchemin {
+  position: relative;
+}
+#reload_repas {
+  margin: 8px;
+  background: $button;
+  color: $button-text;
+  cursor: pointer;
+  padding: 8px 8px;
+  border-radius: 25px;
+  height: 30px;
+  font-size: 0.8rem;
+  transition: all 0.5s;
+  top: 17%;
+  &:hover {
+    transform: scale(1.2);
+  }
 }

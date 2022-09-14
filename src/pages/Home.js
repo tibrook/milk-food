@@ -56,6 +56,7 @@ const Home = () => {
                 <li>Foin à volonté</li>
                 <li>Eau fraîche à volonté</li>
                 <li>Granules 1 fois / jour (1 poignée)</li>
+                <li>Végétaux 1 fois / jour (200g)</li>
               </ul>
             </div>
             <div className="button-container">

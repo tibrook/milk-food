@@ -155,7 +155,7 @@ section {
     background-position: bottom;
     background-color: rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-
+    animation-fill-mode: forwards;
     &:active {
       .logo6 {
         animation: logo6 1s;
@@ -165,10 +165,23 @@ section {
         // webkit-animation-delay: 5s;
         // webkit-animation-duration: 1s;
         // webkit-animation-name: glissement;
-        animation-delay: 5;
-        animation: glissement 1s;
+        // animation-delay: 4s;
+        animation: logo5 2s;
+      }
+      .logo4 {
+        animation: logo4 3s;
+      }
+      .logo3 {
+        animation: logo3 10s;
+      }
+      .logo2 {
+        animation: logo2 11s;
+      }
+      .logo1 {
+        animation: logo1 12s;
       }
     }
+
     .carotte {
       position: absolute;
       left: 1%;
@@ -187,22 +200,27 @@ section {
       height: 40px;
     }
     .logo1 {
+      opacity: 0;
       left: 8%;
       bottom: 0px;
     }
     .logo2 {
+      opacity: 0;
       left: 18%;
       bottom: 10px;
     }
     .logo3 {
+      opacity: 0;
       left: 28%;
       bottom: 30px;
     }
     .logo4 {
+      opacity: 0;
       right: 30%;
       bottom: 45px;
     }
     .logo5 {
+      opacity: 0;
       right: 20%;
       bottom: 0px;
     }
@@ -352,7 +370,7 @@ section {
     }
     .search-container {
       padding-top: 30px;
-      margin-left: 36%;
+      margin-left: 40%;
       h2 {
         color: #fffffe;
       }
@@ -379,13 +397,24 @@ section {
   }
 }
 .parchemin {
+  position: relative;
   background-image: url("../../public/assets/parchemin.png");
   background-size: cover;
   width: 60%;
   height: 100%;
   animation: appearSlow 1s ease-in-out;
-
+  font-family: "font-4";
   margin: auto;
+  button {
+    color: white;
+  }
+  .parchemin_titre {
+    font-family: "font-4";
+    margin: auto;
+    padding-top: 55px;
+    font-size: 1.8rem;
+    font-weight: 400;
+  }
 
   ul {
     opacity: 0;
@@ -394,7 +423,7 @@ section {
     width: 50%;
     margin: auto;
     // margin-right: 75px;
-    padding-top: 80px;
+    padding-top: 15px;
     padding-left: 20px;
     animation-duration: 1s;
     // opacity: 0;
@@ -421,6 +450,9 @@ section {
   }
 }
 @media screen and (max-width: 760px) {
+  section main form h2 {
+    margin-top: 30px;
+  }
   section {
     width: 100%;
     .logo-container {
@@ -428,16 +460,19 @@ section {
     }
   }
   .parchemin {
+    margin-top: 30px;
     width: 80%;
-    display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 65px;
     ul {
       height: 100%;
       padding-top: 0;
       margin-top: auto;
       margin: auto;
+      padding-left: 38px;
+    }
+    .parchemin_titre {
+      padding-top: 28px;
     }
   }
   .besoins-container {
@@ -543,22 +578,73 @@ section {
     opacity: 1;
   }
   to {
-    margin-right: 50px;
+    margin-right: 10%;
     opacity: 0;
   }
 }
-@keyframes glissement {
-  from {
-    margin-right: 0px;
-    margin-bottom: 0px;
+@keyframes logo5 {
+  0% {
+    transform: translate(0, 0);
     opacity: 1;
   }
-  to {
-    margin-bottom: 15px;
-    margin-right: 30px;
-    opacity: 0;
+
+  100% {
+    transform: translate(-15px, -30px);
   }
 }
+@keyframes logo4 {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+  50% {
+    transform: translate(2px, -50px);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(15px, -350px);
+  }
+}
+@keyframes logo3 {
+  0% {
+    transform: translate(0, -90px);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+    transform: translate(0, -3px);
+  }
+  100% {
+    transform: translate(0, 0px);
+  }
+}
+@keyframes logo2 {
+  0% {
+    transform: translate(0, -30px);
+    opacity: 0;
+  }
+  90% {
+    opacity: 1;
+    transform: translate(0, -3px);
+  }
+  100% {
+    transform: translate(0, 0px);
+  }
+}
+@keyframes logo1 {
+  0% {
+    transform: translate(0, -30px);
+    opacity: 0;
+  }
+  90% {
+    opacity: 1;
+    transform: translate(0, -3px);
+  }
+  100% {
+    transform: translate(-20px, 0px);
+  }
+}
+
 @keyframes appearSlow {
   from {
     opacity: 0;
@@ -580,3 +666,59 @@ section {
 }
 
 /* Media queries  */
+@media screen and (max-width: 1570px) {
+  section {
+    main {
+      .preferences {
+        .logoBouftout {
+          height: 80px;
+          width: 60px;
+        }
+        .aime {
+          h2 {
+            font-size: 2.5rem;
+          }
+        }
+        .deteste {
+          h2 {
+            font-size: 2.5rem;
+          }
+        }
+      }
+    }
+  }
+  // .card {
+  //   width: 10%;
+  // }
+}
+
+@media screen and (max-width: 1400px) {
+  section main .search-container {
+    margin-left: 45%;
+  }
+  // .card {
+  //   width: 10%;
+  // }
+}
+@media screen and (max-width: 1092px) {
+  section {
+    width: 100%;
+    padding: 15px;
+  }
+  .besoins-container .generer-repas {
+    margin-top: 75px;
+  }
+  // .card {
+  //   width: 10%;
+  // }
+}
+@mixin anim-lapins($margin) {
+  from {
+    opacity: 1;
+    margin: $margin;
+  }
+  to {
+    margin: 0;
+    opacity: 0;
+  }
+}

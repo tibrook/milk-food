@@ -22,20 +22,22 @@ const CheckboxAliment = ({ aliment }) => {
       // window.localStorage.test = "coucou";
       setIsChecked(true);
     } else {
-      let arraySuppr = {};
+      console.log("il faut supprimer");
+      let arraySuppr = [];
       const alim = window.localStorage.alimentsVolonte.split(",");
+      console.log(`alim : ` + alim);
       for (let i = 0; i < alim.length; i++) {
         // console.log(parseInt(alim[i]));
         // console.log(aliment.id);
         if (parseInt(alim[i]) !== aliment.id) {
-          arraySuppr.id = i;
-          arraySuppr.nom = aliment.nom;
+          arraySuppr.push(alim[i]);
         } else {
         }
       }
-      // console.log(arraySuppr);
-      // window.localStorage.alimentsVolonte = [arraySuppr];
       // setIsChecked(false);
+      // console.log(arraySuppr);
+      window.localStorage.alimentsVolonte = [arraySuppr];
+      setIsChecked(false);
     }
     // console.log(isChecked);
     // if (isChecked) {

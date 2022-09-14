@@ -1,17 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { aliments } from "../data/aliments";
 import CheckboxAliment from "./CheckboxAliment";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 const FormGenerate = ({ alimentsVolonte }) => {
-  let idRecette = [];
-  let response = {};
-
-  console.log(alimentsVolonte);
   const [isGenerated, setIsGenerated] = useState(false);
   const [contentGenerated, setContentGenerated] = useState([]);
 
-  console.log(aliments);
+  /* Retourne la liste de noms d'ingrédients en fonction des ids */
   const genRecette = (ids) => {
     let names = [];
     for (let i = 0; i < ids.length; i++) {
@@ -23,6 +19,7 @@ const FormGenerate = ({ alimentsVolonte }) => {
     }
     return names;
   };
+  /* Génère le message de retour en fonction des noms reçus */
   const genWeight = (noms) => {
     let message = [];
     let recetteAlea = "";
@@ -40,35 +37,35 @@ const FormGenerate = ({ alimentsVolonte }) => {
           console.log(noms[nbAlea].charAt(0));
           recetteAlea += `${Math.floor(
             200 / (noms.length > 3 ? 3 : noms.length)
-          )} grammes d${noms[nbAlea].charAt(0) === "E" ? "'" : "e"} ${
+          )} g d${noms[nbAlea].charAt(0) === "E" ? "'" : "e"} ${
             noms[nbAlea]
           }, `;
           message.push(
-            `${Math.floor(
-              200 / (noms.length > 3 ? 3 : noms.length)
-            )} grammes d${noms[nbAlea].charAt(0) === "E" ? "'" : "e"} ${
-              noms[nbAlea]
-            } `
+            `${Math.floor(200 / (noms.length > 3 ? 3 : noms.length))} g d${
+              noms[nbAlea].charAt(0) === "E" ? "'" : "e"
+            } ${noms[nbAlea]} `
           );
         }
       }
     } else if (noms.length === 2) {
       for (let i = 0; i < noms.length; i++) {
         message.push(
-          `${Math.floor(200 / noms.length)} grammes d${
+          `${Math.floor(200 / noms.length)} g d${
             noms[i].charAt(0) === "E" ? "'" : "e"
           } ${noms[i]}`
         );
       }
     } else if (noms.length === 1) {
-      message.push(`200 grammes de ${noms[0]}`);
+      message.push(`200 g de ${noms[0]}`);
     }
     return message;
   };
+  /* Composant parchemin */
   const Parchemin = ({ message }) => {
     console.log(message);
     return (
       <div className="parchemin">
+        <h2 className="parchemin_titre">Ingrédients</h2>
         <ul>
           {message &&
             message.map((ligneAliment) => (
@@ -83,6 +80,7 @@ const FormGenerate = ({ alimentsVolonte }) => {
       </div>
     );
   };
+  /* Bouton génération de recette */
   const launchGenerate = (e) => {
     e.preventDefault();
 
@@ -99,6 +97,11 @@ const FormGenerate = ({ alimentsVolonte }) => {
     }
   };
 
+  /* Recharger une noubelle recette */
+  const reloadRecette = () => {
+    setIsGenerated(false);
+  };
+
   return (
     <div className="container-recette">
       <form action="" className={isGenerated ? "hidden" : "form"}>
@@ -113,14 +116,12 @@ const FormGenerate = ({ alimentsVolonte }) => {
           {" "}
           Générer le repas !
         </button>
-        <FontAwesomeIcon
-          icon={faXmark}
-          className="cancel-button"
-          onClick={() => setIsGenerated(false)}
-        />
       </form>
       <div className={!isGenerated ? "hidden" : "recette"}>
         <Parchemin message={contentGenerated} />
+        <button id="reload_repas" onClick={() => setIsGenerated(false)}>
+          Générer une autre recette
+        </button>
       </div>
     </div>
   );

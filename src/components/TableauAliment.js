@@ -27,9 +27,9 @@ const TableauAliment = ({ inputSearch }) => {
   return (
     <div className="tableau-container">
       {!inputSearch
-        ? aliments
-            .slice(0, 12)
-            .map((aliment) => <Aliment aliment={aliment} key={aliment.id} />)
+        ? aliments.map((aliment) => (
+            <Aliment aliment={aliment} key={aliment.id} />
+          ))
         : searchAliments.map((aliment) => (
             <Aliment aliment={aliment} key={aliment.id} />
           ))}
